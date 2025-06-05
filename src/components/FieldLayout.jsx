@@ -1,4 +1,5 @@
 import styles from "./styles/field.module.css";
+import PropTypes from "prop-types";
 function FieldLayout({ field, OX }) {
 	return (
 		<>
@@ -18,5 +19,9 @@ function FieldLayout({ field, OX }) {
 		</>
 	);
 }
-
+FieldLayout.propTypes = {
+	field: PropTypes.arrayOf(PropTypes.string).isRequired,
+	isGameEnded: PropTypes.bool.isRequired,
+	handleMove: PropTypes.func.isRequired,
+};
 export default FieldLayout;
