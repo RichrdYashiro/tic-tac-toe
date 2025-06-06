@@ -1,11 +1,15 @@
-function GameLayout(
+import Field from "./components/FieldContainer";
+import Information from "./components/InformationContainer";
+
+function GameLayout({
 	field,
 	isGameEnded,
 	currentPlayer,
 	setCurrentPlayer,
 	setField,
-	isDraw
-) {
+	isDraw,
+	setIsGameEnded,
+}) {
 	return (
 		<>
 			<Field
@@ -14,6 +18,7 @@ function GameLayout(
 				currentPlayer={currentPlayer}
 				setCurrentPlayer={setCurrentPlayer}
 				setField={setField}
+				setIsGameEnded={setIsGameEnded}
 			/>
 
 			<Information

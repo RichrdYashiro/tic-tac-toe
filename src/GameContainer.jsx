@@ -1,8 +1,6 @@
 import "./Game.css";
-import Field from "./components/FieldContainer";
-import Information from "./components/InformationContainer";
 import GameLayout from "./GameLayout";
-import PropTypes from "prop-types";
+
 import { useState } from "react";
 
 function Game() {
@@ -20,20 +18,15 @@ function Game() {
 
 	return (
 		<>
-			<Field
-				field={field}
-				isGameEnded={isGameEnded}
+			<GameLayout
 				currentPlayer={currentPlayer}
+				isGameEnded={isGameEnded}
+				isDraw={isDraw}
+				setIsDraw={setIsDraw}
+				field={field}
 				setCurrentPlayer={setCurrentPlayer}
 				setField={setField}
 				setIsGameEnded={setIsGameEnded}
-				setIsDraw={setIsDraw}
-			/>
-
-			<Information
-				isDraw={isDraw}
-				isGameEnded={isGameEnded}
-				currentPlayer={currentPlayer}
 			/>
 			{(isGameEnded || isDraw) && (
 				<button onClick={resetGame}>Начать заново</button>
